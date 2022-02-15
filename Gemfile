@@ -12,6 +12,13 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# ログイン
+gem 'devise'
+
+# 多言語設定
+gem 'devise-i18n'
+gem 'rails-i18n', '~> 6.0'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
