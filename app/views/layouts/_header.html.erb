@@ -10,6 +10,8 @@
       <% if user_signed_in? %>
         <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-item nav-link active font-weight-bold"%>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" },class: "nav-item nav-link active font-weight-bold" %>
+        <%= link_to "一覧ページ", root_path, class: "nav-item nav-link active font-weight-bold" %>
+        <%= link_to "新規投稿", new_post_path, class: "nav-item nav-link active font-weight-bold" %>
       <% else %>
         <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link active font-weight-bold" %>
         <%= link_to "アカウント登録", new_user_registration_path, class: "nav-item nav-link active font-weight-bold" %>
