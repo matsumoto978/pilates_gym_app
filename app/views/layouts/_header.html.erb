@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #dbb57f;">
   <span class="navbar-brand font-weight-bold">
-    <%= link_to "Pilates Life", root_path, class:"text-decoration-none" ,:style=>"color:black;" %>
   </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,6 +13,7 @@
       <% else %>
         <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link active font-weight-bold" %>
         <%= link_to "アカウント登録", new_user_registration_path, class: "nav-item nav-link active font-weight-bold" %>
+        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "nav-item nav-link active font-weight-bold" %>
       <% end %>
     </div>
   </div>
