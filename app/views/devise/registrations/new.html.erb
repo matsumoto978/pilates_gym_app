@@ -1,8 +1,8 @@
 <div class="sign-up-page">
-  <div class="card">
-    <h2 class="text-center">
+  <div class="card text-center">
+    <div class="card-header">
       新規登録
-    </h2>
+    </div>
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -13,9 +13,6 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
         </div>
         <div class="form-group">
-          <% if @minimum_password_length %>
-            <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-          <% end %><br />
           <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
         </div>
         <div class="form-group">
@@ -36,6 +33,6 @@
         </div>
       <% end %>
       <%= render "devise/shared/links" %>
+      <div>
+      </div>
     </div>
-  </div>
-</div>
