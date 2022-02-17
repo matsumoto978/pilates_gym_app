@@ -19,12 +19,15 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/regular";
 @import "bootstrap/scss/bootstrap";
 
-@import "users/sign_up";
-
 .base-container {
   margin: 0 auto;
   padding: 1rem;
 }
+
+.mw-sm {
+  max-width: 576px;
+}
+
 .mw-md {
   max-width: 720px;
 }
@@ -43,4 +46,8 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+body {
+  padding-top: 70px;
 }
