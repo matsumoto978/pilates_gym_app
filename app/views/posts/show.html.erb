@@ -16,3 +16,12 @@
   </p>
 <% end %>
 <p><%= link_to "投稿一覧へ", posts_path %></p>
+<% if user_signed_in? %>
+  <h4>コメントする</h4>
+  <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+<% end %>
+<hr>
+<h4>コメント一覧</h4>
+<p>
+  <%= render partial: 'comments/index', locals: { comments: @comments } %>
+</p>
