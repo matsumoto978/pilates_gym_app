@@ -2,6 +2,6 @@
   <%= form.label :content %>
   <%= form.text_field :content, required: true %>
   <%= form.label :img %>
-  <%= form.file_field :image %>
+  <%= form.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
   <%= form.submit "送信" %>
 <% end %>
