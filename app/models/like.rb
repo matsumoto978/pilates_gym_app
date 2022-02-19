@@ -3,6 +3,10 @@ class Like < ApplicationRecord
   belongs_to :post
   
   validate :my_post_cannot_like
+  validates :user_id, uniqueness: {
+    scope: :post_id,
+    message: "は同じ投稿に2回以上いいねはできません"
+  }
 
   private
 
