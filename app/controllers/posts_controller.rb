@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_post, only: %i[edit update destroy]
 
   def index
-    @posts = Post.includes(:user, :likes).order(:created_at)
+    @posts = Post.includes(:user, :likes, :comments).order(:created_at)
   end
 
   def new
@@ -16,6 +17,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user, :post).order(:created_at)
   end
 
   def edit
@@ -28,7 +31,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    redirect_to root_path
+    redirect_to @post
   end
 
   private
