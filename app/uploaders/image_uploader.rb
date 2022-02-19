@@ -33,7 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process resize_to_fit: [50, 50]
   # end
   def filename
-    "#{super.chomp(File.extname(super))}.jpg" if original_filename.present?
+    super.chomp(File.extname(super)) + ".jpg" if original_filename.present?
   end
 
   # Create different versions of your uploaded files:
@@ -47,6 +47,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w[jpg jpeg gif png]
   end
 
+  def size_range
+    0..5.megabytes
+  end
+
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:0
   # Override the filename of the uploaded files:
@@ -57,4 +61,18 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def size_range
   #  0..5.megabytes
   # end
+  process convert: "jpg"
+
+  def filename
+    "#{secure_token}.#{file.extension}" if original_filename.present?
+  end
+
+  protected
+
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+  end
+
+  process resize_to_limit: [200, 300]
 end
