@@ -1,6 +1,6 @@
 class Like < ApplicationRecord
   belongs_to :user
-  belongs_to :post
+  belongs_to :post, counter_cache: :likes_count
   
   validate :my_post_cannot_like
   validates :user_id, uniqueness: {

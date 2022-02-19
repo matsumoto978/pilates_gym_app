@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
 
   def index
-    @posts = Post.includes(:user).order(:created_at)
+    @posts = Post.includes(:user, :likes).order(:created_at)
   end
 
   def new
@@ -19,7 +19,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
@@ -39,7 +38,6 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = current_user.posts.find_by(id: params[:id])
-    redirect_to root_path, alert: "権限がありません" if @post.nil?
+    @post = current_user.posts.find(params[:id])
   end
 end

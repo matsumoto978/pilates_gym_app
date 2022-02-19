@@ -8,7 +8,6 @@
   <% else %>
     <%= render "dislike", post: @post %>
   <% end %>
-  <%= @post.likes.count %>
 </p>
 <% if current_user.id == @post.user_id %>
   <p>
