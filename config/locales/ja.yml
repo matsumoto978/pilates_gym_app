@@ -1,5 +1,14 @@
 ---
 ja:
+  attributes:
+    id: ID
+    namespace: 名前空間
+    resource_type: リソースタイプ
+    resource_id: リソースID
+    author_type: 著者タイプ
+    author_id: 著者ID
+    created_at: 作成日時
+    updated_at: 更新日時
   activerecord:
     errors:
       messages:
@@ -30,7 +39,8 @@ ja:
       user:
         name: 名前
         gender: 性別
-        introduction: 紹介文
+        introduction: 自己紹介
+        img: 自己画像
   date:
     abbr_day_names:
       - Sun
