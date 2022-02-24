@@ -30,7 +30,8 @@ ja:
       user:
         name: 名前
         gender: 性別
-        introduction: 紹介文
+        introduction: 自己紹介
+        img: 自己画像
   date:
     abbr_day_names:
       - Sun
