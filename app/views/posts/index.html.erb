@@ -4,7 +4,9 @@
     <%= f.search_field :content_cont %>
     <%= f.submit "検索" %>
   <% end %>
-  <h2 class="text-center">投稿一覧</h2>
-  <%= render @posts %>
-  <%= paginate @posts %>
+  <div class="col-xl-9 posts">
+    <div class="wrap">
+      <%= render @posts %>
+    </div>
+  </div>
 </div>
