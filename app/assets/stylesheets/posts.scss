@@ -2,13 +2,6 @@
   margin: 10px -15px 0 -15px;
 }
 
-.search-form {
-  margin-bottom: 40px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #666;
-}
-
 .form-wrapper {
   margin: 0 20px;
   position: sticky;
@@ -17,6 +10,7 @@
 
 .title {
   color: #666;
+  text-align: center;
   letter-spacing: 0.3rem;
   margin-bottom: 2rem;
   font-weight: 600;
@@ -28,14 +22,14 @@
 
 .search-button {
   text-align: center;
-  background-color: #ff8c00;
+  background-color: #ec8352;
   margin-top: 2rem;
   border-radius: 0.5rem;
 }
 
 .comment-button {
   text-align: center;
-  background-color: #ff8c00;
+  background-color: #8b7252;
 }
 
 .cards {

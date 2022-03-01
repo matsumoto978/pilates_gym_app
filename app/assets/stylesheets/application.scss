@@ -55,48 +55,6 @@ a:hover {
   padding: 1rem;
 }
 
-.btn {
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 0.8;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: white;
-}
-
-.btn-sm {
-  font-size: 0.8rem;
-  font-weight: 600;
-  line-height: 0.5;
-  position: relative;
-  display: block;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #ff0000;
-  border-radius: 0.5rem;
-}
-
 .hamburger-menu {
   margin: 0 0 0 auto;
 }
@@ -107,14 +65,14 @@ a:hover {
   font-size: 1.2rem;
   text-align: center;
   color: #fff;
-  background-color: #79c06e;
+  background-color: #83b1c4;
 }
 
 .alert-alert {
   font-size: 1.2rem;
   text-align: center;
   color: #fff;
-  background-color: #ea5532;
+  background-color: #fd785a;
 }
 
 /* ページネーション */
@@ -150,7 +108,7 @@ a:hover {
 /* span */
 
 .essential {
-  color: red;
+  color: rgb(245, 132, 132);
   padding-right: 0.5em;
 }
 
@@ -172,6 +130,27 @@ header {
 
 .text-uppercase {
   text-transform: uppercase !important;
+}
+
+/***** 検索フォーム *****/
+.search-form {
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.search-result {
+  margin-left: 15px;
+}
+
+.form-submit-btn {
+  max-width: 800px;
+  justify-content: center;
+  margin: auto;
+  background-color: #f38f83;
+  font-size: 15px;
+  letter-spacing: 0.1em;
 }
 
 /* レスポンシブ対応 */

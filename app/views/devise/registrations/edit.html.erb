@@ -31,17 +31,14 @@
         <%= f.file_field :img %>
       </div>
       <div class="form-group">
-        <%= f.label :self_introduction, "自己紹介"%>
-        <%= f.text_area :self_introduction, class: "form-control", placeholder: "最大150文字", maxlength: 150 %>
+        <%= f.label :introduction, "自己紹介"%>
+        <%= f.text_area :introduction, class: "form-control", placeholder: "最大150文字", maxlength: 150 %>
       </div>
       <div class="search-button">
         <%= f.submit "変更する", class: "btn btn-block form-submit-btn" %>
       </div>
-      <div class="login-button mt-4">
-        <%= link_to  "マイページへ", user_path(current_user), class: "btn btn-block" %>
-      </div>
-      <div class="delete-button">
-        <%= link_to "アカウント削除", users_hide_path(current_user), method: :put, data: { confirm: "削除しますか？" }, class: "btn-sm btn-block" %>
+      <div class="delete-button m-2">
+        <%= link_to "アカウント削除",  user_session_path, method: :post, data: { confirm: "削除しますか？" }, class: "btn btn-block" %>
       </div>
     </div>
   <% end %>
