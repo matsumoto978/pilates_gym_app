@@ -1,31 +1,32 @@
-<div class="sign-up-page">
-  <div class="card text-center">
-    <div class="card-header">
-      ログイン
-    </div>
-    <div class="card-body">
+<div class="card login">
+  <div class="card-body">
+    <h1 class="title">ログイン</h1>
+    <div class="form-wrapper">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-group">
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "名前" %>
+        <div class=form-group>
+          <%= f.label :email, "メールアドレス" %>
+          <%= f.email_field :email, autofocus: "true", autocomplete: "email", class: "form-control", placeholder: "xxx@email.com" %>
         </div>
         <div class="form-group">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
-        </div>
-        <div class="form-group">
-          <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワード" %>
+          <%= f.label :password, "パスワード" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
         </div>
         <% if devise_mapping.rememberable? %>
-          <div class="form-group">
+          <div class="field">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
           </div>
         <% end %>
-        <div class="sign-in__submit-btn">
-          <%= f.submit "ログイン", class: "btn btn-block text-white" %>
+        <div class="login-button">
+          <%= f.submit "ログイン", class: "btn btn-block form-submit-btn" %>
+        </div>
+        <div class="guest-login-button mt-5">
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-block" %>
+        </div>
+        <div class="search-button mt-3">
+          <%= link_to "新規登録", new_user_registration_path, class: "btn btn-block" %>
         </div>
       <% end %>
-      <hr>
-      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
