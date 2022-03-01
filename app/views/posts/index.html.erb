@@ -1,12 +1,36 @@
-<div class="container">
-  <h1 class="text-center">店舗検索</h1>
-  <%= search_form_for @q do |f| %>
-    <%= f.search_field :content_cont %>
-    <%= f.submit "検索" %>
-  <% end %>
+<div class="row">
+  <div class="col-xl-3 search-form">
+    <div class="form-wrapper">
+      <h1 class="title">ジムを探す</h1>
+      <%= search_form_for @q, url: posts_path do |f| %>
+        <div class="form-group">
+          <%= f.label "並べ替え", {class: "search-tag"} %>
+          <%= f.select( :sorts, {"新着順": "created_at desc"}, { selected: params[:q] }, class: "form-control") %>
+        </div>
+        <div class=form-group>
+          <%= f.label :name_cont, "店舗名", {class: "search-tag"} %>
+          <%= f.search_field :name_cont, autofocus: true, class: "form-control" %>
+        </div>
+        <div class=form-group>
+          <%= f.label :ward_eq, "都道府県", {class: "search-tag"} %>
+          <%= f.select :ward_eq, post.wards_i18n.invert.map { |key, value| [key, post.wards[value]]}, {include_blank: "指定なし"}, { class: "form-control", style: "margin-bottom: 15px;", data: {} } %>
+        </div>
+        <div class=form-group>
+          <%= f.label :address_cont, "住所", {class: "search-tag"} %>
+          <%= f.search_field :address_cont, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="search-button">
+          <%= f.submit "検索", class: "btn  btn-block form-submit-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
   <div class="col-xl-9 posts">
+    <h1 class="title">posts</h1>
+    <h4 class="title text-center mb-5"><%= @count %>件の検索結果</h4>
     <div class="wrap">
       <%= render @posts %>
     </div>
   </div>
 </div>
+<%= paginate @posts %>
