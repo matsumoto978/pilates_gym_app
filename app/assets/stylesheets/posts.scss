@@ -1,0 +1,173 @@
+.row {
+  margin: 10px -15px 0 -15px;
+}
+
+.search-form {
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.form-wrapper {
+  margin: 0 20px;
+  position: sticky;
+  top: 0;
+}
+
+.title {
+  color: #666;
+  letter-spacing: 0.3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.posts {
+  text-align: center;
+}
+
+.search-button {
+  text-align: center;
+  background-color: #ff8c00;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
+.comment-button {
+  text-align: center;
+  background-color: #ff8c00;
+}
+
+.cards {
+  padding: 25px;
+  width: calc((100% - 30px * 2) / 3);
+  background-color: #b8a799;
+  border-radius: 10px;
+  position: relative;
+  color: rgb(180, 169, 145);
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 20px;
+}
+
+.post-picture {
+  padding: 2, 0rem;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+.cards-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  padding-top: 60%;
+}
+
+.cards-header img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: 4rem;
+  text-align: center;
+  color: #555;
+}
+
+.post-address {
+  height: 3rem;
+  margin: auto;
+  font-weight: 500;
+}
+
+.search-tag {
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #fa8072;
+  color: #fff;
+}
+
+.link-box {
+  float: right;
+  padding-top: 1rem;
+}
+
+/* show */
+
+.post-detail {
+  text-align: center;
+}
+
+.show {
+  text-align: center;
+}
+
+.small {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.link {
+  text-align: right;
+}
+
+.post-show {
+  width: 100%;
+}
+
+.delete-link {
+  padding-right: 1rem;
+  float: right;
+}
+
+.steel-gray {
+  color: #5a5a5a;
+}
+
+@media not all and (min-width: 768px) {
+  .cards {
+    width: 100%;
+  }
+  .cards-title {
+    font-weight: 600;
+    height: auto;
+  }
+  .post-address {
+    height: auto;
+  }
+  .post-picture {
+    width: auto;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .post-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media not all and (min-width: 992px) {
+  .post-about {
+    margin: 2rem 0;
+  }
+}
