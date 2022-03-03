@@ -65,14 +65,14 @@ a:hover {
   font-size: 1.2rem;
   text-align: center;
   color: #fff;
-  background-color: #83b1c4;
+  background-color: #79c06e;
 }
 
 .alert-alert {
   font-size: 1.2rem;
   text-align: center;
   color: #fff;
-  background-color: #fd785a;
+  background-color: #ea5532;
 }
 
 /* ページネーション */
@@ -85,7 +85,7 @@ a:hover {
 
 .pagination > li > a {
   border: none;
-  color: rgb(255, 185, 144);
+  color: #999;
 }
 
 .pagination > li > a:hover {
@@ -108,49 +108,18 @@ a:hover {
 /* span */
 
 .essential {
-  color: rgb(245, 132, 132);
+  color: red;
   padding-right: 0.5em;
 }
 
 /* --span */
 
 .nav {
-  background-color: #fccfbd;
+  background-color: #ff7f50;
 }
 
 .registration-form {
   max-width: 100%;
-}
-
-/* トップページ */
-
-header {
-  display: block;
-}
-
-.text-uppercase {
-  text-transform: uppercase !important;
-}
-
-/***** 検索フォーム *****/
-.search-form {
-  margin-bottom: 40px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #666;
-}
-
-.search-result {
-  margin-left: 15px;
-}
-
-.form-submit-btn {
-  max-width: 800px;
-  justify-content: center;
-  margin: auto;
-  background-color: #f38f83;
-  font-size: 15px;
-  letter-spacing: 0.1em;
 }
 
 /* レスポンシブ対応 */
@@ -159,15 +128,5 @@ header {
   .registration-form {
     max-width: 60%;
     margin: auto;
-  }
-}
-
-@media only screen and (max-width: 780px) {
-  .btn-salmon {
-    margin-bottom: 1rem;
-  }
-  .btn-orange {
-    margin-bottom: 1rem;
-    margin-right: 1.2rem;
   }
 }

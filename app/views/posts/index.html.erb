@@ -1,20 +1,28 @@
-<div class="row">
-  <div class="col-xl-3 search-form">
-    <div class="form-wrapper">
-      <h1 class="title">ジムを探す</h1>
+<div class="album py-5 ">
+  <div class="container-index">
+    <div class="bg-mask">
+      <h1 class="title">スタジオを探す</h1>
       <%= search_form_for @q, url: posts_path do |f| %>
-        <div class="form-inline my-2 my-lg-0">
+        <div class="form-group">
           <%= f.search_field :name_cont, class:"form-control", type:"search", placeholder:"店舗名" %>
+        </div>
+        <div class="form-group">
           <%= f.collection_select :ward_id_eq, Ward.all, :id, :name, {include_blank: "エリア"}, class: "form-control" %>
-          <%= f.submit "検索", class: "btn form-submit-btn" %>
+        </div>
+        <div class=form-group>
+          <%= f.search_field :address_cont, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="search-button">
+          <%= f.submit "検索", class: "btn  btn-block" %>
         </div>
       <% end %>
-      <div class="col-xl-9 posts">
-        <h4 class="title text-center mb-5"><%= @count %>件の検索結果</h4>
-        <div class="wrap">
-          <%= render @posts %>
-        </div>
-      </div>
     </div>
   </div>
+</div>
+<div class="col-xl-6 posts">
+  <h4 class="title text-center mb-3"><%= @count %>件の検索結果</h4>
+  <div class="wrap">
+    <%= render @posts %>
+  </div>
   <%= paginate @posts %>
+</div>

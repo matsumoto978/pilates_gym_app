@@ -22,7 +22,7 @@
 
 .search-button {
   text-align: center;
-  background-color: #ec8352;
+  background-color: #bb8064;
   margin-top: 2rem;
   border-radius: 0.5rem;
 }
@@ -35,7 +35,7 @@
 .cards {
   padding: 25px;
   width: calc((100% - 30px * 2) / 3);
-  background-color: #b8a799;
+  background-color: #b4a192;
   border-radius: 10px;
   position: relative;
   color: rgb(180, 169, 145);
@@ -87,17 +87,12 @@
   color: #555;
 }
 
-.post-address {
+.post-ward {
   height: 3rem;
   margin: auto;
-  font-weight: 500;
-}
-
-.search-tag {
-  padding: 6px;
-  border-radius: 10px;
-  background-color: #fa8072;
-  color: #fff;
+  font-weight: 300;
+  text-align: right;
+  color: #555;
 }
 
 .link-box {
@@ -105,63 +100,25 @@
   padding-top: 1rem;
 }
 
-/* show */
-
-.post-detail {
-  text-align: center;
-}
-
-.show {
-  text-align: center;
-}
-
-.small {
-  padding: 0.5rem;
-  font-size: 0.8rem;
-}
-
-.link {
-  text-align: right;
-}
-
-.post-show {
-  width: 100%;
-}
-
-.delete-link {
-  padding-right: 1rem;
-  float: right;
-}
-
-.steel-gray {
-  color: #5a5a5a;
-}
-
-@media not all and (min-width: 768px) {
+@media screen and (max-width: 576px) {
   .cards {
     width: 100%;
   }
   .cards-title {
-    font-weight: 600;
+    font-weight: 500;
     height: auto;
+    font-size: 2rem;
   }
-  .post-address {
+  .post-ward {
     height: auto;
+    font-size: 1.5rem;
   }
-  .post-picture {
+  .post-img {
     width: auto;
     height: auto;
   }
-}
 
-@media only screen and (max-width: 780px) {
-  .post-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media not all and (min-width: 992px) {
-  .post-about {
-    margin: 2rem 0;
+  .link-box {
+    margin: 0;
   }
 }
