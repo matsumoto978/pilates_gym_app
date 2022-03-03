@@ -8,7 +8,7 @@
         </div>
         <div class=form-group>
           <%= form.label :ward_id, "エリア" %>
-          <%= f.collection_select :ward_id, Ward.all, :id, :name, {include_blank: "選択して下さい"}, class: "form-control", required: true %>
+          <%= form.collection_select :ward_id, Ward.all, :id, :name, {include_blank: "選択して下さい"}, class: "form-control", required: true %>
         </div>
         <div class="form-group">
           <%= form.label :address, "住所" %>
