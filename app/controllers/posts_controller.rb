@@ -1,18 +1,13 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[edit update destroy]
-  before_action :set_post_q, { only: [:index, :show, :search] }
+  before_action :set_q, only: [:index, :show, :search]
 
   PER_PAGE = 12
 
   def index
-    if params[:q].present?
-      @posts = @q.result.page(params[:page]).includes(:user, :likes).per(PER_PAGE)
-      @count = @posts.total_count
-    else
-      params[:q] = { sorts: "created_at desc" }
-      @posts = Post.order(:created_at).page(params[:page]).per(PER_PAGE)
-    end
+    @posts = Post.all.includes(:user, :likes, :comments).order(created_at: :desc).page(params[:page]).per(PER_PAGE)
+    @q = Post.all.ransack(params[:q])
   end
 
   def new
@@ -39,7 +34,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    redirect_to @post
+    redirect_to @post, alert: "削除しました"
   end
 
   def search
@@ -56,7 +51,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
   end
 
-  def set_post_q
+  def set_q
     @q = Post.ransack(params[:q])
   end
 end
