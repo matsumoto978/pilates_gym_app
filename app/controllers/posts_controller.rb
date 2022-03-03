@@ -15,8 +15,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.create!(post_params)
-    redirect_to post
+    @post = current_user.posts.create(post_params)
+    if @post.save
+      redirect_to @post, notice: "投稿しました!!"
+    else
+      flash.now[:alert] = "投稿に失敗しました"
+      render :new
+    end
   end
 
   def show
@@ -44,7 +49,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :name, :URL, :TEL, :address, :ward, :img, :user_id)
+    params.require(:post).permit(:content, :name, :URL, :TEL, :address, :ward_id, :img, :user_id)
   end
 
   def set_post
