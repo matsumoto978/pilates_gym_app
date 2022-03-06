@@ -1,25 +1,22 @@
-<div class="cards">
-  <a href="/posts/<%= post.id %>" class="cards-body">
-    <div class="cards-header">
-      <% if post.img? %>
-        <img src=<%= post.img.url %>>
-      <% else %>
-        <%= image_tag "default-posts.jpg" %>
+  
+<div class="row posts-group">
+  <% @posts.each do |post| %>
+    <div class="col-12 col-md-6 col-lg-4 text-card-container">
+      <%= link_to post, class: "card content-card border-dark text-decoration-none", rel: "noopener noreferrer" do %>
+        <div class="card-header p-0">
+          <%= image_tag post.img.url, class: "card-img-top" %>
+        </div>
+        <div class="card-body text-dark text-card-body">
+          <p class="card-text text-title mt-4"><%= post.name %></p>
+        </div>
       <% end %>
     </div>
-    <div class="post-title">
-      <P><%= post.name %></P>
-    </div>
-  </a>
-  <div class="contents steel-gray">
-    <div class="post-ward">
-      <p><%= post.ward.name %></p>
-    </div>
-  </div>
-  <p class="link-box">
-    <% if user_signed_in? && current_user.id == (post.user_id).to_i %>
-      <%= link_to "編集", edit_post_path(post) %>
-      <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除しますか？" } %>
-    <% end %>
-  </p>
+  <% end %>
+</div>
+<p class="link-box">
+  <% if user_signed_in? && current_user.id == (post.user_id).to_i %>
+    <%= link_to "編集", edit_post_path(post) %>
+    <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除しますか？" } %>
+  <% end %>
+</p>
 </div>

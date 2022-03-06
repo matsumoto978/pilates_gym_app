@@ -1,6 +1,6 @@
 <div class="album py-5 ">
-  <div class="container-index">
-    <div class="bg-mask">
+  <div class="col-xl-3 search-form">
+    <div class="form-wrapper">
       <h1 class="title">スタジオを探す</h1>
       <%= search_form_for @q, url: posts_path do |f| %>
         <div class="form-group">
@@ -18,11 +18,11 @@
       <% end %>
     </div>
   </div>
-</div>
-<div class="col-xl-6 posts">
-  <h4 class="title text-center mb-3"><%= @count %>件の検索結果</h4>
-  <div class="wrap">
-    <%= render @posts %>
+  <div class="col-xl-9 posts">
+    <h4 class="title text-center mb-5"><%= @count %>件の検索結果</h4>
+    <div class="wrap">
+      <%= render @posts %>
+    </div>
   </div>
-  <%= paginate @posts %>
 </div>
+<%= paginate @posts %>

@@ -1,4 +1,9 @@
-<%= form_with(model: [post, comment], url: post_comments_path(@post) ) do |f| %>
-  <%= f.text_area :content, required: true, size: "60x5", autocomplete: "content_cont", class:"area-field" %>
-  <%= f.submit "送信" %>
-<% end %>
+<%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="comment_form mt-4">
+  <%= form_with(model: [post, comment], url: post_comments_path(@post)) do |f| %>
+    <%= f.text_area :content, class: "form-control" %>
+    <div class="button-group">
+      <%= f.submit "送信", class: "btn comment-submit w-25 mt-3" %>
+    </div>
+  <% end %>
+</div>

@@ -19,114 +19,109 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/regular";
 @import "bootstrap/scss/bootstrap";
 
+/* 全体 */
+html {
+  height: 100%;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-top: 70px;
-  min-height: 100vh;
-  color: #555;
-  background-color: rgb(237, 228, 211);
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", Meiryo, sans-serif;
+  height: 100%;
+  background-color: #fffaf0;
 }
 
 main {
-  flex: 1;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
-}
-
-a {
-  text-decoration: none;
-  color: #736d71;
-}
-
-a:hover {
-  color: #999;
+  min-height: 100%;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-color: #fffaf0;
 }
 
 .base-container {
-  margin: 0 auto 0 auto;
+  margin: 7% auto 0;
   padding: 1rem;
 }
 
-.hamburger-menu {
-  margin: 0 0 0 auto;
+.navbar-brand {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 20px;
 }
 
-/* フラッシュ */
+footer {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+}
 
-.alert-notice {
-  font-size: 1.2rem;
+.mw-md {
+  max-width: 720px;
+}
+
+.mw-lg {
+  max-width: 960px;
+}
+
+.mw-xl {
+  max-width: 1200px;
+}
+
+/* ページネーション部分 */
+.pagination {
+  justify-content: center;
+  margin-top: 80px;
+}
+
+/* いいね機能 */
+.vertical_like {
   text-align: center;
-  color: #fff;
-  background-color: #79c06e;
+  margin: 100px 100px 0 35px;
+  width: 100px;
+  display: flex;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+
+.unlike-btn {
+  color: #ff2581;
+}
+
+.button-group .btn {
+  max-width: 800px;
+  justify-content: center;
+  margin: auto;
+  background: #f1e767;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f1e767),
+    to(#feb645)
+  );
+  background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
+  background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+  font-family: "Londrina Shadow", cursive;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+}
+
+.button-group .btn:hover {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#f1e767),
+    to(#feb645)
+  );
+  background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
+  background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
+}
+
+/* フラッシュの色 */
+.alert-notice {
+  @extend .alert-info;
 }
 
 .alert-alert {
-  font-size: 1.2rem;
-  text-align: center;
-  color: #fff;
-  background-color: #ea5532;
-}
-
-/* ページネーション */
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.pagination > li > a {
-  border: none;
-  color: #999;
-}
-
-.pagination > li > a:hover {
-  color: #ff7f50;
-  background-color: white;
-}
-
-.pagination > .active > a {
-  color: #ff7f50;
-  background-color: white;
-}
-
-.pagination > .active > a:hover {
-  background-color: white;
-  color: #ff7f50;
-}
-
-/* --ページネーション */
-
-/* span */
-
-.essential {
-  color: red;
-  padding-right: 0.5em;
-}
-
-/* --span */
-
-.nav {
-  background-color: #ff7f50;
-}
-
-.registration-form {
-  max-width: 100%;
-}
-
-/* レスポンシブ対応 */
-
-@media only screen and (min-width: 960px) {
-  .registration-form {
-    max-width: 60%;
-    margin: auto;
-  }
+  @extend .alert-danger;
 }

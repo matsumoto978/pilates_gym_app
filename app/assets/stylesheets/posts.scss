@@ -1,124 +1,513 @@
-.row {
-  margin: 10px -15px 0 -15px;
+.base-container {
+  margin-top: 0;
 }
 
-.form-wrapper {
-  margin: 0 20px;
-  position: sticky;
-  top: 0;
+.full_image {
+  width: 70%;
+  max-height: 600px;
 }
 
-.title {
-  color: #666;
+.like_to_post {
+  position: relative;
+  z-index: 3;
   text-align: center;
-  letter-spacing: 0.3rem;
-  margin-bottom: 2rem;
-  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.like_lead {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.vertical_like {
+  position: relative;
+  border-radius: 8px;
+  background: #fffaf0;
+  display: block;
+  box-sizing: border-box;
+  color: #111;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+  margin: auto;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.card-body {
+  .text_space {
+    color: #000;
+  }
+}
+
+.thumb-image,
+.noimage {
+  width: 200px;
+  height: 130px;
+}
+
+.post_img_full {
+  text-align: center;
+}
+
+.icon_image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.icon_image_side {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.icon_space {
+  padding: 10px 0 0 10px;
+  margin-right: 15px;
+}
+
+#wrapper {
+  background-image: image-url("big-bg.jpg");
+  background-size: cover;
+  min-height: 30vh;
+}
+
+.post-content .page-title {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 50px;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  padding-top: 80px;
+  text-align: center;
+  text-shadow: 1px 2px 3px #009966;
+}
+
+.post-content p {
+  font-weight: bold;
+  font-size: 25px;
+  color: rgb(24, 23, 23);
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+.fixed_btn {
+  position: fixed;
+  bottom: 80px;
+  right: 6%;
+  padding: 6px 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  color: #fff;
+  background: #93c9ff;
+  border: 1.5px solid #93c9ff;
+  border-radius: 33px;
+  text-decoration: none;
+}
+
+.fixed_btn:hover {
+  background: #74baff;
+  text-decoration: none;
+}
+
+.main-contents {
+  display: flex;
 }
 
 .posts {
-  text-align: center;
+  width: 74%;
 }
 
-.search-button {
-  text-align: center;
-  background-color: #bb8064;
-  margin-top: 2rem;
-  border-radius: 0.5rem;
+aside {
+  width: 32%;
 }
 
-.comment-button {
-  text-align: center;
-  background-color: #8b7252;
+.panel {
+  border: solid 1px #dcdcdc;
+  background-color: #ffff;
+  margin-left: 50px;
 }
 
-.cards {
-  padding: 25px;
-  width: calc((100% - 30px * 2) / 3);
-  background-color: #b4a192;
-  border-radius: 10px;
-  position: relative;
-  color: rgb(180, 169, 145);
+.panel-heading {
+  border-bottom: dashed 1px #c7a799;
 }
 
-.wrap {
+.panel-body {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin: 0 20px;
+  justify-content: space-evenly;
+  height: 80px;
+  padding-top: 10px;
 }
 
-.post-picture {
-  padding: 2, 0rem;
-  width: auto;
-  height: auto;
-  object-fit: cover;
+.show-btn-link {
+  color: #696969;
 }
 
-.cards-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.show-btn-link:hover {
+  text-decoration: none;
+  color: #696969;
 }
 
-.cards-header {
-  margin-bottom: 1.5rem;
-  position: relative;
+.home-icon {
+  font-size: 20px;
+  color: #4453637c;
+}
+
+.user-panel {
+  height: 160px;
+  padding-top: 10px;
+}
+
+.card-body {
+  display: flex;
   overflow: hidden;
-  padding-top: 60%;
+  padding-bottom: 0;
 }
 
-.cards-header img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.text_space .text_content {
+  margin: 0;
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.post-title {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-  height: 4rem;
+.text_space {
+  width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .card-text {
+    margin: 0;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.text_space {
+  .text_content {
+    font-size: 17px;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.thumbnail_space {
+  display: flex;
+  margin-left: auto;
+}
+
+.like_space {
+  margin: auto 15px 0 0;
+  color: #696969;
+}
+
+.user_info {
   text-align: center;
-  color: #555;
+  color: #000;
+
+  .user_name {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  .user_name_side {
+    font-size: 10px;
+  }
+
+  .user_name {
+    p {
+      color: #000;
+    }
+  }
 }
 
-.post-ward {
-  height: 3rem;
-  margin: auto;
-  font-weight: 300;
-  text-align: right;
-  color: #555;
+.post_info {
+  margin-top: 40px;
+  display: flex;
+
+  .post_entry {
+    width: 80%;
+
+    p {
+      font-size: 18px;
+    }
+  }
 }
 
-.link-box {
-  float: right;
-  padding-top: 1rem;
+.user_info {
+  width: 60%;
 }
 
-@media screen and (max-width: 576px) {
-  .cards {
+.post_title {
+  font-size: 35px;
+  overflow-wrap: break-word;
+}
+
+.post-article {
+  text-align: left;
+
+  p {
+    font-size: 25px;
+    padding: 10px 200px;
+    overflow-wrap: break-word;
+  }
+}
+
+.content-entry {
+  margin: 20px auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Cabin Sketch", cursive;
+}
+
+.comment-create {
+  text-align: center;
+}
+
+.comment_destroy {
+  margin: auto 0 0 auto;
+  padding-right: 20px;
+
+  a {
+    color: #4453637c;
+  }
+}
+
+.comment-date {
+  margin-left: auto;
+  padding-right: 10px;
+  color: #4453637c;
+}
+
+.comment-container {
+  display: flex;
+
+  .comment-content {
+    width: 80%;
+  }
+}
+
+.comment-user {
+  text-align: center;
+  padding-top: 10px;
+
+  .comment-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+}
+
+.comment-counter {
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tab_item {
+  width: calc(100% / 2);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+input[name="tab_item"] {
+  display: none;
+}
+
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+#all:checked ~ #all_content,
+#like:checked ~ #like_content {
+  display: block;
+}
+
+.tabs input:checked + .tab_item {
+  background-color: #5ab4bd;
+  color: #fff;
+}
+
+// 色分けのヘルパーメソッド用
+.floral {
+  background-color: #ffccff;
+}
+
+.citrus {
+  background-color: #ffff99;
+}
+
+.herbal {
+  background-color: #aeffbd;
+}
+
+.woody {
+  background-color: #ffad90;
+}
+
+.spicy {
+  background-color: #db7093;
+}
+
+.japanese {
+  background-color: #66cdaa;
+}
+
+.exotic {
+  background-color: #d0b0ff;
+}
+
+.other {
+  background-color: #dcdcdc;
+}
+
+// スマホ対応
+@media screen and (max-width: 950px) {
+  // 投稿一覧
+  .container {
+    padding: 0;
+  }
+
+  .main-contents {
+    flex-direction: column;
     width: 100%;
   }
-  .cards-title {
-    font-weight: 500;
-    height: auto;
-    font-size: 2rem;
-  }
-  .post-ward {
-    height: auto;
-    font-size: 1.5rem;
-  }
-  .post-img {
-    width: auto;
-    height: auto;
+
+  aside {
+    width: 100%;
   }
 
-  .link-box {
-    margin: 0;
+  .panel {
+    margin: 60px 0;
+  }
+
+  .posts {
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 20px 0 0 0;
+  }
+
+  .thumbnail_space {
+    display: none;
+  }
+
+  .text_space {
+    .card-text {
+      margin: 0;
+      font-size: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .text_content {
+    display: none;
+  }
+
+  .icons {
+    margin-left: auto;
+    padding-right: 15px;
+    font-size: small;
+  }
+
+  .icon_image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .form-content {
+    min-height: 200px;
+  }
+
+  #all_content {
+    padding: 0;
+  }
+
+  .user_info {
+    width: 100%;
+  }
+
+  // 投稿詳細
+  .post_entry .page-title {
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .post-content p {
+    display: none;
+  }
+
+  .post_info {
+    flex-direction: column;
+
+    .user_info {
+      width: 100%;
+    }
+
+    .post_entry {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .post-article {
+    text-align: left;
+
+    p {
+      font-size: 25px;
+      padding: 0;
+      overflow-wrap: normal;
+    }
+  }
+
+  .comment_destroy {
+    padding-right: 0;
   }
 }
