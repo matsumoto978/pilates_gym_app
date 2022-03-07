@@ -2,11 +2,6 @@
   margin-top: 0;
 }
 
-.full_image {
-  width: 70%;
-  max-height: 600px;
-}
-
 .like_to_post {
   position: relative;
   z-index: 3;
@@ -38,7 +33,7 @@
 
 .card-body {
   .text_space {
-    color: #000;
+    color: rgb(0, 0, 0);
   }
 }
 
@@ -118,10 +113,6 @@
 .fixed_btn:hover {
   background: #74baff;
   text-decoration: none;
-}
-
-.main-contents {
-  display: flex;
 }
 
 .posts {
@@ -260,7 +251,7 @@ a:hover {
   overflow-wrap: break-word;
 }
 
-.post-article {
+.post-name {
   text-align: left;
 
   p {
@@ -322,56 +313,6 @@ a:hover {
   font-weight: bold;
 }
 
-.tabs {
-  margin-top: 50px;
-  padding-bottom: 40px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  margin: 0 auto;
-}
-
-.tab_item {
-  width: calc(100% / 2);
-  height: 50px;
-  border-bottom: 3px solid #5ab4bd;
-  background-color: #d9d9d9;
-  line-height: 50px;
-  font-size: 16px;
-  text-align: center;
-  color: #565656;
-  display: block;
-  float: left;
-  text-align: center;
-  font-weight: bold;
-  transition: all 0.2s ease;
-}
-
-.tab_item:hover {
-  opacity: 0.75;
-}
-
-input[name="tab_item"] {
-  display: none;
-}
-
-.tab_content {
-  display: none;
-  padding: 40px 40px 0;
-  clear: both;
-  overflow: hidden;
-}
-
-#all:checked ~ #all_content,
-#like:checked ~ #like_content {
-  display: block;
-}
-
-.tabs input:checked + .tab_item {
-  background-color: #5ab4bd;
-  color: #fff;
-}
-
 // 色分けのヘルパーメソッド用
 .floral {
   background-color: #ffccff;
@@ -406,11 +347,8 @@ input[name="tab_item"] {
 }
 
 // スマホ対応
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 960px) {
   // 投稿一覧
-  .container {
-    padding: 0;
-  }
 
   .main-contents {
     flex-direction: column;
@@ -510,4 +448,12 @@ input[name="tab_item"] {
   .comment_destroy {
     padding-right: 0;
   }
+}
+
+.search-button {
+  text-align: center;
+  background-color: #c27c2d7e;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
 }

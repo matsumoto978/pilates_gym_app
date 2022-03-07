@@ -3,7 +3,7 @@
     <h2 class="post_title"><%= @post.name %></h2>
   </div>
 </div>
-<div class="post_img_full mt-5">
+<div class="post_img_full mt-3">
   <% if @post.img? then %>
     <%= image_tag @post.img.url ,class: 'full_image'%>
   <% end %>
@@ -19,7 +19,6 @@
   <%= render partial: 'comments/index', locals: { comments: @comments } %>
 </div>
 <hr class="my-4">
-<div class=button-group mt-5>
-  <%= link_to "投稿一覧へ", posts_path, class:"btn btn-block" %>
+<div class=login-button>
   <%= link_to "トップページへ", root_path, class:"btn btn-block" %>
 </div>
