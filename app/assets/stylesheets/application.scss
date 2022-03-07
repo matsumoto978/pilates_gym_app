@@ -19,155 +19,68 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/regular";
 @import "bootstrap/scss/bootstrap";
 
+/* 全体 */
+html {
+  height: 100%;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-top: 70px;
-  min-height: 100vh;
-  color: #555;
-  background-color: rgb(237, 228, 211);
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", Meiryo, sans-serif;
+  height: 100%;
+  background-color: #fffaf0;
 }
 
 main {
-  flex: 1;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
-}
-
-a {
-  text-decoration: none;
-  color: #736d71;
-}
-
-a:hover {
-  color: #999;
+  min-height: 100%;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-color: #fff4df;
 }
 
 .base-container {
-  margin: 0 auto 0 auto;
+  margin: 7% auto 0;
   padding: 1rem;
 }
 
-.hamburger-menu {
-  margin: 0 0 0 auto;
+.navbar-brand {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 20px;
 }
 
-/* フラッシュ */
+.mw-md {
+  max-width: 720px;
+}
 
-.alert-notice {
-  font-size: 1.2rem;
+.mw-lg {
+  max-width: 960px;
+}
+
+/* ページネーション部分 */
+.pagination {
+  justify-content: center;
+  margin-top: 80px;
+}
+
+/* いいね機能 */
+.vertical_like {
   text-align: center;
-  color: #fff;
-  background-color: #83b1c4;
+  margin: 100px 100px 0 35px;
+  width: 100px;
+  display: flex;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+
+.unlike-btn {
+  color: #ff2581;
+}
+
+/* フラッシュの色 */
+.alert-notice {
+  @extend .alert-info;
 }
 
 .alert-alert {
-  font-size: 1.2rem;
-  text-align: center;
-  color: #fff;
-  background-color: #fd785a;
-}
-
-/* ページネーション */
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.pagination > li > a {
-  border: none;
-  color: rgb(255, 185, 144);
-}
-
-.pagination > li > a:hover {
-  color: #ff7f50;
-  background-color: white;
-}
-
-.pagination > .active > a {
-  color: #ff7f50;
-  background-color: white;
-}
-
-.pagination > .active > a:hover {
-  background-color: white;
-  color: #ff7f50;
-}
-
-/* --ページネーション */
-
-/* span */
-
-.essential {
-  color: rgb(245, 132, 132);
-  padding-right: 0.5em;
-}
-
-/* --span */
-
-.nav {
-  background-color: #fccfbd;
-}
-
-.registration-form {
-  max-width: 100%;
-}
-
-/* トップページ */
-
-header {
-  display: block;
-}
-
-.text-uppercase {
-  text-transform: uppercase !important;
-}
-
-/***** 検索フォーム *****/
-.search-form {
-  margin-bottom: 40px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #666;
-}
-
-.search-result {
-  margin-left: 15px;
-}
-
-.form-submit-btn {
-  max-width: 800px;
-  justify-content: center;
-  margin: auto;
-  background-color: #f38f83;
-  font-size: 15px;
-  letter-spacing: 0.1em;
-}
-
-/* レスポンシブ対応 */
-
-@media only screen and (min-width: 960px) {
-  .registration-form {
-    max-width: 60%;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 780px) {
-  .btn-salmon {
-    margin-bottom: 1rem;
-  }
-  .btn-orange {
-    margin-bottom: 1rem;
-    margin-right: 1.2rem;
-  }
+  @extend .alert-danger;
 }

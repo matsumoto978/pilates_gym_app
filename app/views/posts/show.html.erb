@@ -1,35 +1,24 @@
-<h1>投稿詳細</h1>
-<p>【メールアドレス】 <%= @post.user.email %></p>
-<p>【内容】 <%= @post.content %></p>
-<p>【写真】<%= image_tag @post.img.url %></p>
-<tr>
-  <th scope="row">URL</th>
-  <td colspan="2">
-    <% if @post.URL? %>
-      <div class="steel-gray"><%= text_url_to_link(h(@post.URL)).html_safe %></div>
-    <% end%>
-  </td>
-</tr>
-<p id="post-<%= @post.id %>">
-  <% if @post.liked_by?(current_user) %>
-    <%= render "like", post: @post %>
-  <% else %>
-    <%= render "dislike", post: @post %>
+<div class="post_info">
+  <div class='post_entry'>
+    <h2 class="post_title"><%= @post.name %></h2>
+  </div>
+</div>
+<div class="post_img_full mt-3">
+  <% if @post.img? then %>
+    <%= image_tag @post.img.url ,class: 'full_image'%>
   <% end %>
-</p>
-<% if current_user.id == @post.user_id %>
-  <p>
-    <%= link_to "編集", edit_post_path(@post) %>
-    <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: "削除しますか？" } %>
-  </p>
-<% end %>
-<p><%= link_to "投稿一覧へ", posts_path %></p>
-<% if user_signed_in? %>
-  <h4>コメントする</h4>
+</div>
+<div class="post-content">
+  <p><%= @post.content %></p>
+</div>
+<div class="comment-create my-5">
+  <h3 class="text">コメントする</h3>
   <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
-<% end %>
-<hr>
-<h4>コメント一覧</h4>
-<p>
+</div>
+<div id="comments_area">
   <%= render partial: 'comments/index', locals: { comments: @comments } %>
-</p>
+</div>
+<hr class="my-4">
+<div class=login-button>
+  <%= link_to "トップページへ", root_path, class:"btn btn-block" %>
+</div>

@@ -12,7 +12,25 @@
 
 .delete-button {
   text-align: center;
-  background-color: rgb(85, 141, 224);
+  background-color: rgb(224, 85, 85);
   margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
+.sign_up-button {
+  text-align: center;
+  background-color: #6cc792;
+  border-radius: 0.5rem;
+}
+
+.change-button {
+  text-align: center;
+  background-color: #6cbcc7;
+  border-radius: 0.5rem;
+}
+
+.search-button {
+  text-align: center;
+  background-color: #fa8072;
   border-radius: 0.5rem;
 }

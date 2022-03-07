@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[edit update destroy]
+  before_action :set_q, only: [:index, :show, :search]
 
   PER_PAGE = 12
 
   def index
-    @q = Post.ransack(params[:q])
-    @posts = @q.result.page(params[:page]).per(PER_PAGE).includes(:user, :likes, :comments).order(created_at: :desc)
+    @posts = Post.all.includes(:user, :likes, :comments).order(created_at: :desc).page(params[:page]).per(PER_PAGE)
+    @q = Post.all.ransack(params[:q])
   end
 
   def new
@@ -14,8 +15,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.create!(post_params)
-    redirect_to post
+    @post = current_user.posts.create(post_params)
+    if @post.save
+      redirect_to @post, notice: "投稿しました!!"
+    else
+      flash.now[:alert] = "投稿に失敗しました"
+      render :new
+    end
   end
 
   def show
@@ -24,8 +30,7 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user, :post).order(created_at: :desc)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @post.update!(post_params)
@@ -34,16 +39,24 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    redirect_to @post
+    redirect_to @post, alert: "削除しました"
+  end
+
+  def search
+    @results = @q.result
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:content, :name, :URL, :TEL, :address, :ward, :img, :user_id)
+    params.require(:post).permit(:content, :name, :URL, :TEL, :address, :ward_id, :img, :user_id)
   end
 
   def set_post
     @post = current_user.posts.find(params[:id])
+  end
+
+  def set_q
+    @q = Post.ransack(params[:q])
   end
 end

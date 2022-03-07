@@ -1,11 +1,13 @@
-<nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #dbb57f;">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #dbb57f;">
   <span class="navbar-brand font-weight-bold">
+    <i class="fas fa-tint"></i>
+    <%= link_to "Pilates App", root_path, class:"text-decoration-none" ,:style=>"color:black;" %>
   </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="navbar-nav">
       <% if user_signed_in? %>
         <%= link_to "アカウント編集", edit_user_registration_path, class: "nav-item nav-link active font-weight-bold"%>
