@@ -24,15 +24,11 @@
                 <%= image_tag post.img.url, class: "card-img-top" %>
               </div>
               <div class="card-body text-dark text-card-body">
-                <p class="card-text text-name mt-4"><%= post.name %></p>
+                <p class="card-text text-name"><%= post.name %></p>
               </div>
             <% end %>
           </div>
         <% end %>
-      </div>
-      <hr class="my-3">
-      <div class='button-group'>
-        <%= link_to "トップページへ", root_path, class:"btn btn-block" %>
       </div>
     </div>
   </div>

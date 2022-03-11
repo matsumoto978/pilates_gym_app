@@ -1,5 +1,6 @@
 .base-container {
   margin-top: 0;
+  flex-direction: column;
 }
 
 .like_to_post {
@@ -89,30 +90,6 @@
   color: rgb(24, 23, 23);
   margin: 10px 0 0;
   text-align: center;
-}
-
-.fixed_btn {
-  position: fixed;
-  bottom: 80px;
-  right: 6%;
-  padding: 6px 30px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  background: transparent;
-  outline: none !important;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-  color: #fff;
-  background: #93c9ff;
-  border: 1.5px solid #93c9ff;
-  border-radius: 33px;
-  text-decoration: none;
-}
-
-.fixed_btn:hover {
-  background: #74baff;
-  text-decoration: none;
 }
 
 .posts {
@@ -230,8 +207,8 @@ a:hover {
 }
 
 .post_info {
+  text-align: center;
   margin-top: 40px;
-  display: flex;
 
   .post_entry {
     width: 80%;
@@ -246,13 +223,10 @@ a:hover {
   width: 60%;
 }
 
-.post_title {
+.post_name {
+  text-align: center;
   font-size: 35px;
   overflow-wrap: break-word;
-}
-
-.post-name {
-  text-align: left;
 
   p {
     font-size: 25px;
@@ -311,39 +285,6 @@ a:hover {
 .comment-counter {
   padding-left: 20px;
   font-weight: bold;
-}
-
-// 色分けのヘルパーメソッド用
-.floral {
-  background-color: #ffccff;
-}
-
-.citrus {
-  background-color: #ffff99;
-}
-
-.herbal {
-  background-color: #aeffbd;
-}
-
-.woody {
-  background-color: #ffad90;
-}
-
-.spicy {
-  background-color: #db7093;
-}
-
-.japanese {
-  background-color: #66cdaa;
-}
-
-.exotic {
-  background-color: #d0b0ff;
-}
-
-.other {
-  background-color: #dcdcdc;
 }
 
 // スマホ対応

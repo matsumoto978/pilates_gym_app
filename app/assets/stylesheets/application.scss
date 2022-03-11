@@ -21,19 +21,20 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
 /* 全体 */
 html {
+  flex-direction: column;
   height: 100%;
 }
 
 body {
   height: 100%;
-  background-color: #fffaf0;
+  background-color: hsl(39, 100%, 94%);
 }
 
 main {
   min-height: 100%;
   padding-top: 50px;
   padding-bottom: 100px;
-  background-color: #fff4df;
+  background-color: hsl(39, 100%, 94%);
 }
 
 .base-container {
@@ -52,6 +53,10 @@ main {
 
 .mw-lg {
   max-width: 960px;
+}
+
+.mw-xl {
+  max-width: 1200px;
 }
 
 /* ページネーション部分 */
