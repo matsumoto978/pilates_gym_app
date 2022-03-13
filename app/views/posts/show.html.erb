@@ -11,50 +11,59 @@
           <% end %>
         </div>
       <% end %>
-    </div>
-    <div class="col-sm-pu-10 col-md-10 col-lg-6 pt-4 order-lg-2">
-      <div class="ward">
-        <span class="title-label">
-          住所
-        </span>
-        <p class="ward">
-          <%= @post.address %>
-        </p>
-      </div>
-      <div class="ward">
-        <span class="title-label">
-          公式サイト
-        </span>
-        <p class="post-url">
-          <% if @post.URL? %>
-            <div class="steel-gray"><%= text_url_to_link(h(@post.URL)).html_safe %></div>
-          <% end%>
-        </p>
-      </div>
-      <div class="ward">
-        <span class="title-label">
-          TEL
-        </span>
-        <p class="post-tel">
-          <% if @post.TEL? %>
-            <div class="post-TEL"><%= @post.TEL %></div>
-          <% end %>
-        </p>
-      </div>
-      <div class="ward">
-        <span class="title-label">
-          ~投稿者コメント~
-        </span>
-        <p class="post-content">
-          <%= @post.content %>
-        </p>
-      </div>
       <p class="link-box">
-        <% if user_signed_in? && current_user.id == (@post.user_id).to_i %>
-          <%= link_to "編集", edit_post_path(@post) %>
-          <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: "削除しますか？" } %>
+        <span class="post-date pull-right mt-3">
+          <i class='fas fa-clock home-icon'></i> <%= time_ago_in_words(@post.created_at) %>前
+        </span>
+        <% if current_user.id == @post.user_id %>
+          <%= link_to edit_post_path(@post), method: :get do %>
+            <i class="fas fa-pen"></i> (編集)
+          <% end %>
+          <%= link_to post_path(@post), method: :delete,data: { confirm: "削除しますか？", remote: true } do %>
+            <i class="far fa-trash-alt"></i> (削除)
+          <% end %>
         <% end %>
       </p>
+    </div>
+    <div class="card-post col-md-12 col-lg-6 order-lg-2">
+      <div class="col-sm-pu-10 col-md-10 col-lg-10 pt-4 order-lg-2">
+        <div class="post">
+          <span class="title-label">
+            住所
+          </span>
+          <p class="address">
+            <%= @post.address %>
+          </p>
+        </div>
+        <div class="post">
+          <span class="title-label">
+            公式サイト
+          </span>
+          <p class="post-url">
+            <% if @post.URL? %>
+              <%= text_url_to_link(h(@post.URL)).html_safe %>
+            <% end%>
+          </p>
+        </div>
+        <div class="post">
+          <span class="title-label">
+            TEL
+          </span>
+          <p class="post-tel">
+            <% if @post.TEL? %>
+              <%= @post.TEL %>
+            <% end %>
+          </p>
+        </div>
+        <div class="post">
+          <span class="title-label">
+            投稿者コメント
+          </span>
+          <p class="post-content">
+            <%= @post.content %>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
   <hr>
