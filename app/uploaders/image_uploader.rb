@@ -14,6 +14,11 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  # 指定サイズで切り抜く
+  process resize_to_fill: [400, 400]
+
+  process convert: "jpg"
+
   def extension_whitelist
     %w[jpg jpeg gif png]
   end

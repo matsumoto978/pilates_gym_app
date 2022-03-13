@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.full_image {
+  width: 50%;
+  max-height: 400px;
+}
+
 .like_to_post {
   position: relative;
   z-index: 3;
@@ -62,6 +67,43 @@
   object-fit: cover;
 }
 
+.thumbnail img,
+.thumbnail-nav img {
+  width: 100%;
+}
+
+.thumbnail-thumb {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.thumbnail-thumb li {
+  margin: 5px;
+}
+
+/***** 投稿画像 サムネイル *****/
+.thumbnial-thumb .slick-next {
+  right: 20px;
+  z-index: 100;
+}
+
+.thumbnail-thumb .slick-prev {
+  left: 15px;
+  z-index: 100;
+}
+
+.thumbnail-thumb .slick-current {
+  opacity: 0.5;
+}
+
+.thumbnail-thumb div div div {
+  cursor: pointer;
+}
+
+.thumbnail-thumb .slick-track {
+  transform: unset !important;
+}
+
 .icon_space {
   padding: 10px 0 0 10px;
   margin-right: 15px;
@@ -92,43 +134,16 @@
   text-align: center;
 }
 
+.post-url {
+  margin: 5px 0 0;
+}
+
 .posts {
   width: 74%;
 }
 
 aside {
   width: 32%;
-}
-
-.panel {
-  border: solid 1px #dcdcdc;
-  background-color: #ffff;
-  margin-left: 50px;
-}
-
-.panel-heading {
-  border-bottom: dashed 1px #c7a799;
-}
-
-.panel-body {
-  display: flex;
-  justify-content: space-evenly;
-  height: 80px;
-  padding-top: 10px;
-}
-
-.show-btn-link {
-  color: #696969;
-}
-
-.show-btn-link:hover {
-  text-decoration: none;
-  color: #696969;
-}
-
-.home-icon {
-  font-size: 20px;
-  color: #4453637c;
 }
 
 .user-panel {
@@ -243,10 +258,24 @@ a:hover {
   font-family: "Cabin Sketch", cursive;
 }
 
-.comment-create {
-  text-align: center;
+.comment-submit {
+  background-color: #6cc792;
+  border-radius: 0.5rem;
 }
 
+.comment-create {
+  text-align: right;
+}
+.comment-counter {
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.comment-title {
+  text-align: left;
+  padding-left: 20px;
+  font-weight: bold;
+}
 .comment_destroy {
   margin: auto 0 0 auto;
   padding-right: 20px;
@@ -280,11 +309,6 @@ a:hover {
     border-radius: 15px;
     object-fit: cover;
   }
-}
-
-.comment-counter {
-  padding-left: 20px;
-  font-weight: bold;
 }
 
 // スマホ対応
@@ -373,16 +397,6 @@ a:hover {
     .post_entry {
       width: 100%;
       text-align: center;
-    }
-  }
-
-  .post-article {
-    text-align: left;
-
-    p {
-      font-size: 25px;
-      padding: 0;
-      overflow-wrap: normal;
     }
   }
 
