@@ -4,13 +4,11 @@
 <section class="container mb-5">
   <div class="row p-0 d-flex mb-2 justify-content-center">
     <div class="col-sm-10 col-md-10 col-lg-6 order-lg-1">
-      <% if @post.img? %>
-        <div class="thumbnail">
-          <% if @post.img? then %>
-            <%= image_tag @post.img.url ,class: 'full_image'%>
-          <% end %>
-        </div>
-      <% end %>
+      <div class="thumbnail">
+        <% if @post.img? then %>
+          <%= image_tag @post.img.url ,class: 'full_image' %>
+        <% end %>
+      </div>
       <p class="link-box">
         <span class="post-date pull-right mt-3">
           <i class='fas fa-clock home-icon'></i> <%= time_ago_in_words(@post.created_at) %>前

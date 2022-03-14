@@ -3,110 +3,61 @@
   flex-direction: column;
 }
 
-.full_image {
-  width: 50%;
-  max-height: 400px;
-}
-
-.like_to_post {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  margin-bottom: 30px;
-  padding: 20px 0;
-}
-
-.like_lead {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.vertical_like {
-  position: relative;
-  border-radius: 8px;
-  background: #fffaf0;
-  display: block;
-  box-sizing: border-box;
-  color: #111;
-  text-align: center;
-  text-decoration: none;
-  width: 200px;
-  margin: auto;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
 .card-body {
-  .text_space {
-    color: rgb(0, 0, 0);
+  background: #ffffffcc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #ccc;
+  height: 100px;
+  padding-top: 18px 1.25rem;
+}
+
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-img-top {
+  height: 195px;
+  width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .card-img-top {
+    height: 300px;
+    width: 100%;
   }
 }
 
-.thumb-image,
-.noimage {
-  width: 200px;
-  height: 130px;
+@media screen and (max-width: 576px) {
+  .card-img-top {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+.card-text {
+  color: #000011;
+  font-weight: bord;
+  font-size: 18px;
+}
+
+.full_image {
+  width: 500px;
+  height: 400px;
+}
+
+.thumbnail {
+  max-width: 500px;
+  max-height: 400px;
+  width: 500px;
+  height: 400px;
+  margin: 0 auto 5px;
+  padding: 0;
 }
 
 .post_img_full {
   text-align: center;
-}
-
-.icon_image {
-  width: 60px;
-  height: 60px;
-  border-radius: 50px;
-  object-fit: cover;
-}
-
-.icon_image_side {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  object-fit: cover;
-}
-
-.thumbnail img,
-.thumbnail-nav img {
-  width: 100%;
-}
-
-.thumbnail-thumb {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.thumbnail-thumb li {
-  margin: 5px;
-}
-
-/***** 投稿画像 サムネイル *****/
-.thumbnial-thumb .slick-next {
-  right: 20px;
-  z-index: 100;
-}
-
-.thumbnail-thumb .slick-prev {
-  left: 15px;
-  z-index: 100;
-}
-
-.thumbnail-thumb .slick-current {
-  opacity: 0.5;
-}
-
-.thumbnail-thumb div div div {
-  cursor: pointer;
-}
-
-.thumbnail-thumb .slick-track {
-  transform: unset !important;
-}
-
-.icon_space {
-  padding: 10px 0 0 10px;
-  margin-right: 15px;
 }
 
 #wrapper {
@@ -185,52 +136,9 @@ a:hover {
   text-decoration: none;
 }
 
-.thumbnail_space {
-  display: flex;
-  margin-left: auto;
-}
-
 .like_space {
   margin: auto 15px 0 0;
   color: #696969;
-}
-
-.user_info {
-  text-align: center;
-  color: #000;
-
-  .user_name {
-    margin-top: 30px;
-    font-weight: bold;
-    font-size: 25px;
-  }
-
-  .user_name_side {
-    font-size: 10px;
-  }
-
-  .user_name {
-    p {
-      color: #000;
-    }
-  }
-}
-
-.post_info {
-  text-align: center;
-  margin-top: 40px;
-
-  .post_entry {
-    width: 80%;
-
-    p {
-      font-size: 18px;
-    }
-  }
-}
-
-.user_info {
-  width: 60%;
 }
 
 .post_name {
@@ -254,14 +162,6 @@ a:hover {
   font-weight: bold;
   font-size: 20px;
   border-bottom: #000000;
-}
-
-.content-entry {
-  margin: 20px auto;
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
-  font-family: "Cabin Sketch", cursive;
 }
 
 .comment-submit {
@@ -326,10 +226,6 @@ a:hover {
     width: 100%;
   }
 
-  .thumbnail_space {
-    display: none;
-  }
-
   .text_space {
     .card-text {
       margin: 0;
@@ -342,25 +238,6 @@ a:hover {
 
   .text_content {
     display: none;
-  }
-
-  .icons {
-    margin-left: auto;
-    padding-right: 15px;
-    font-size: small;
-  }
-
-  .icon_image {
-    width: 40px;
-    height: 40px;
-  }
-
-  .form-content {
-    min-height: 200px;
-  }
-
-  #all_content {
-    padding: 0;
   }
 
   .user_info {
