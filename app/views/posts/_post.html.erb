@@ -1,17 +1,17 @@
-<div class="card">
-  <a href="/posts/<%= post.id %>" class="cards-body">
-    <div class="cards-header">
-      <% if post.img? %>
-        <img src=<%= post.img.url %>>
-      <% else %>
-        <%= image_tag "default-posts.jpg" %>
-      <% end %>
-    </div>
-    <div class="post-title">
-      <P><%= post.name %></P>
-    </div>
-  </a>
-  <div class="post-address">
-    <p><%= post.ward.name %></p>
+<div class="container">
+  <div class="row posts-group">
+    <% @posts.each do |post| %>
+      <div class="col-12 col-md-6 col-lg-4 text-card-container">
+        <%= link_to post, class: "card content-card border-dark text-decoration-none", rel: "noopener noreferrer" do %>
+          <div class="card-header p-0">
+            <%= image_tag post.img.url, class: "card-img-top" %>
+          </div>
+          <div class="card-body text-dark text-card-body">
+            <p class="post-title mt-4"><%= post.name %></p>
+            <p class="post-address mt-2"><%= post.ward.name %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
