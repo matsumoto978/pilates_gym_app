@@ -1,2 +1,5 @@
-<%= link_to "☆", post_likes_path(post), method: :post, remote: true %>
+<%# 「いいね」していない（クリックすると「いいね！」にする） %>
+<%= link_to post_post_likes_path(post), {method: :post, remote: true, class: "dislike-heart"} do %>
+  <i class="far fa-heart"></i>
+<% end %>
 <%= post.likes_count %>

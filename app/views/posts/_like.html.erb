@@ -1,2 +1,5 @@
-<%= link_to "★", post_likes_path(post), method: :delete, remote: true %>
+<%# 「いいね！」済み（クリックすると「いいね」解除） %>
+<%= link_to post_post_likes_path(post), {method: :delete, remote: true, class: "heart"} do %>
+  <i class="fa fa-heart"></i>
+<% end %>
 <%= post.likes_count %>
