@@ -1,24 +1,82 @@
-<div class="post_info">
-  <div class='post_entry'>
-    <h2 class="post_title"><%= @post.name %></h2>
+<div class="contents-title text-center mt-3 mb-3">
+  <h2 class="main-title"><%= @post.name %></h2>
+</div>
+<section class="container mb-5">
+  <div class="row p-0 d-flex mb-2 justify-content-center">
+    <div class="col-sm-10 col-md-10 col-lg-6 order-lg-1">
+      <div class="thumbnail">
+        <% if @post.img? then %>
+          <%= image_tag @post.img.url ,class: 'full_image' %>
+        <% end %>
+      </div>
+      <p class="link-box">
+        <span class="post-date pull-right mt-3">
+          <i class='fas fa-clock home-icon'></i> <%= time_ago_in_words(@post.created_at) %>前
+        </span>
+        <% if current_user.id == @post.user_id %>
+          <%= link_to edit_post_path(@post), method: :get do %>
+            <i class="fas fa-pen"></i> (編集)
+          <% end %>
+          <%= link_to post_path(@post), method: :delete,data: { confirm: "削除しますか？", remote: true } do %>
+            <i class="far fa-trash-alt"></i> (削除)
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+    <div class="card-post col-md-12 col-lg-6 order-lg-2">
+      <div class="col-sm-pu-10 col-md-10 col-lg-10 pt-4 order-lg-2">
+        <div class="post">
+          <span class="title-label">
+            住所
+          </span>
+          <p class="address">
+            <%= @post.address %>
+          </p>
+        </div>
+        <div class="post">
+          <span class="title-label">
+            公式サイト
+          </span>
+          <p class="post-url">
+            <% if @post.URL? %>
+              <%= text_url_to_link(h(@post.URL)).html_safe %>
+            <% end%>
+          </p>
+        </div>
+        <div class="post">
+          <span class="title-label">
+            TEL
+          </span>
+          <p class="post-tel">
+            <% if @post.TEL? %>
+              <%= @post.TEL %>
+            <% end %>
+          </p>
+        </div>
+        <div class="post">
+          <span class="title-label">
+            投稿者コメント
+          </span>
+          <p class="post-content">
+            <%= @post.content %>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="post_img_full mt-3">
-  <% if @post.img? then %>
-    <%= image_tag @post.img.url ,class: 'full_image'%>
-  <% end %>
-</div>
-<div class="post-content">
-  <p><%= @post.content %></p>
-</div>
-<div class="comment-create my-5">
-  <h3 class="text">コメントする</h3>
-  <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
-</div>
-<div id="comments_area">
-  <%= render partial: 'comments/index', locals: { comments: @comments } %>
-</div>
-<hr class="my-4">
-<div class=login-button>
-  <%= link_to "トップページへ", root_path, class:"btn btn-block" %>
+  <hr>
+  <div class="col-sm-12 col-md-13">
+    <div class="comment-create">
+      <div class="comment-title">コメント</div>
+      <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+    </div>
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>
+  </div>
+  <hr>
+  <div class=login-button>
+    <%= link_to "トップページへ", root_path, class:"btn btn-block" %>
+  </div>
+</section>
 </div>
