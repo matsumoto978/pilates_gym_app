@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_user, { only: [:show, :hide] }
 
   def show
-    @user = User.find(params[:id])
+    @posts = Post.where(user_id: @user.id)
   end
 
-  def post
-    @user = User.find_by(id: params[:id])
-    @post = Post.where(user_id: @user.id).page(params[:page]).per(PER_PAGE)
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
