@@ -1,0 +1,26 @@
+<div class="profile-wrap">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <img src=<%= @user.img.url %> class="icon-image">
+    </div>
+    <div class="col-md-6 text-center">
+      <h1 class="title"><%= @user.name %></h1>
+      <% if @user.introduction.present? %>
+        <h6 class="introduction steel-gray bg-lemon"><%= @user.introduction %></h6>
+      <% else %>
+        <h6 class="introduction steel-gray bg-lemon"><%= @user.name %>です</h6>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="title mt-5">登録した焙煎店</h1>
+      <hr class="style-1">
+      <% if @posts.present? %>
+        <%= render partial: "user-post", collection: @posts, as: :post %>
+      <% else %>
+        <h3 class="text-center steel-gray">まだ登録がありません</h3>
+      <% end %>
+    </div>
+  </div>
+</div>
