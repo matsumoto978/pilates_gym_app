@@ -34,3 +34,62 @@
   background-color: #fa8072;
   border-radius: 0.5rem;
 }
+
+.card-user {
+  font-size-adjust: none;
+  margin: 15px;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+  border: #000000 solid 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+
+.card-user:hover {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-8px);
+  cursor: pointer;
+}
+
+.user-card-body {
+  background: #ffffffcc;
+  height: 90px;
+  padding-top: 18px 1.25rem;
+}
+
+.icon-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 150px;
+  object-fit: cover;
+  margin: 0 50px 0;
+}
+
+.user-post-address {
+  text-align: center;
+}
+
+.user-post-date {
+  text-align: right;
+  margin-right: 5px;
+}
+
+.user-post {
+  text-align: center;
+}
+
+.user-name {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.wrap {
+  margin: 5px 0px;
+}

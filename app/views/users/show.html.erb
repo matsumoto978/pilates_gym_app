@@ -1,0 +1,33 @@
+<div class="wrap">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <% if @user.img? %>
+        <%= image_tag @user.img.url, class: "icon-img" %>
+      <% else %>
+        <%= image_tag "default.png", class: "icon-img" %>
+      <% end %>
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="user-name"><%= @user.name %>
+        <% if current_user.id == @user.id %>
+          <%= link_to edit_user_registration_path(@user.id) do %>
+            <span class="fas fa-pen edit-user-btn"></span>
+          <% end %>
+        <% end %>
+      </div>
+      <hr class="style-1">
+      <h6 class="user-introduction"><%= @user.introduction %></h6>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-mb-3">
+      <h1 class="user-post mt-4">登録したスタジオ</h1>
+      <hr class="style-1">
+      <% if @posts.present? %>
+        <%= render partial: "user-post", collection: @posts, as: :post %>
+      <% else %>
+        <h3 class="user-post">まだ登録がありません</h3>
+      <% end %>
+    </div>
+  </div>
+</div>
