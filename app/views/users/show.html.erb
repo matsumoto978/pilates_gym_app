@@ -1,25 +1,32 @@
-<div class="profile-wrap">
+<div class="wrap">
   <div class="row">
     <div class="col-md-6 text-center">
-      <img src=<%= @user.img.url %> class="icon-image">
-    </div>
-    <div class="col-md-6 text-center">
-      <h1 class="title"><%= @user.name %></h1>
-      <% if @user.introduction.present? %>
-        <h6 class="introduction steel-gray bg-lemon"><%= @user.introduction %></h6>
+      <% if @user.img? %>
+        <%= image_tag @user.img.url, class: "icon-img" %>
       <% else %>
-        <h6 class="introduction steel-gray bg-lemon"><%= @user.name %>です</h6>
+        <%= image_tag "default.png", class: "icon-img" %>
       <% end %>
     </div>
+    <div class="col-md-6 text-center">
+      <div class="user-name"><%= @user.name %>
+        <% if current_user.id == @user.id %>
+          <%= link_to edit_user_registration_path(@user.id) do %>
+            <span class="fas fa-pen edit-user-btn"></span>
+          <% end %>
+        <% end %>
+      </div>
+      <hr class="style-1">
+      <h6 class="user-introduction"><%= @user.introduction %></h6>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h1 class="title mt-5">登録した焙煎店</h1>
+  <div class="container">
+    <div class="col-mb-3">
+      <h1 class="user-post mt-4">登録したスタジオ</h1>
       <hr class="style-1">
       <% if @posts.present? %>
         <%= render partial: "user-post", collection: @posts, as: :post %>
       <% else %>
-        <h3 class="text-center steel-gray">まだ登録がありません</h3>
+        <h3 class="user-post">まだ登録がありません</h3>
       <% end %>
     </div>
   </div>

@@ -1,0 +1,7 @@
+<div class="card-user col-mb-3">
+  <h4 class="card-title mt-3"><a href="/posts/<%= post.id %>"><%= post.name %></a></h4>
+  <div class="user-card-body">
+    <p class="user-post-address"><%= post.address %></p>
+    <p class="user-post-date"><%= post.created_at.strftime('%Y/%m/%d') %></p>
+  </div>
+</div>
