@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, { only: [:index, :show] }
+  PER_PAGE = 9
 
   def index
     @users = User.where.not(id: current_user.id).page(params[:page]).per(5).order("created_at DESC")

@@ -3,11 +3,16 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
   before_action :set_q, only: [:index, :show, :search]
 
-  PER_PAGE = 12
+  PER_PAGE = 9
 
   def index
-    @posts = Post.all.includes(:user, :likes, :comments).order(created_at: :desc).page(params[:page]).per(PER_PAGE)
-    @q = Post.all.ransack(params[:q])
+    if params[:q].present?
+      @posts = @q.result.page(params[:page]).per(PER_PAGE)
+      @count = @posts.total_count
+    else
+      params[:q] = { sorts: "created_at desc" }
+      @posts = Post.order(:created_at).page(params[:page]).per(PER_PAGE)
+    end
   end
 
   def new
