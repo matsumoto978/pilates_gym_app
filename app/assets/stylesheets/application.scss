@@ -62,23 +62,18 @@ main {
 /* ページネーション部分 */
 .pagination {
   justify-content: center;
-  margin-top: 80px;
+  padding: 30px;
 }
 
-/* いいね機能 */
-.vertical_like {
-  text-align: center;
-  margin: 100px 100px 0 35px;
-  width: 100px;
-  display: flex;
+.pagination li a {
+  background-color: #c79652;
+  color: #fff;
 }
 
-.like-btn {
-  color: #8899a6;
-}
-
-.unlike-btn {
-  color: #ff2581;
+.page-item.active .page-link {
+  background-color: #fff;
+  border-color: #c79652;
+  color: #c79652;
 }
 
 /* フラッシュの色 */
