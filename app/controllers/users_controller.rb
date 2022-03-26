@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, { only: [:show, :hide] }
+  before_action :set_user, { only: [:index, :show] }
+
+  def index
+    @users = User.where.not(id: current_user.id).page(params[:page]).per(5).order("created_at DESC")
+  end
 
   def show
     @posts = Post.where(user_id: @user.id)
