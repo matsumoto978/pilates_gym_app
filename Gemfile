@@ -29,8 +29,10 @@ gem 'ransack'
 
 # 管理者画面
 gem 'activeadmin'
-
 gem "active_hash"
+
+# enumをI18n対応
+gem 'enum_help'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,24 +1,83 @@
-# README
+# PilatesApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
 
-Things you may want to cover:
+- アプリ URL :
 
-* Ruby version
+## アプリの特徴
 
-* System dependencies
+都内のピラティススタジオを投稿、情報を共有するアプリです。
 
-* Configuration
+- ピラティススタジオの紹介やレビューができる
+- 都内のピラティススタジオを検索できる
+- 写真投稿や口コミ機能でスタジオの雰囲気が分かる
 
-* Database creation
+## アプリの開発背景
 
-* Database initialization
+近年、健康的な生活を求めてピラティスを趣味として行う人たちが増えてきました。しかし、ピラティススタジオ自体がまだ少ないことや、一般の人に情報が共有されていないことが多い為、その問題を解消するためにこのアプリを開発しました。
 
-* How to run the test suite
+## 使用技術
 
-* Services (job queues, cache servers, search engines, etc.)
+- 言語：Ruby (2.7.2)
+- フレームワーク：Ruby on Rails (6.1.4.6)
+- フロントエンド：HTML/Scss/JavaScript
+- DB：PostgreSQL
+- インフラ：Heroku
+- ソースコード管理：GitHub
+- 開発環境：MacOS/Visual Studio Code
 
-* Deployment instructions
+## 機能一覧
 
-* ...
+|     |             機能             |         gem 等          |
+| :-: | :--------------------------: | :---------------------: |
+|  1  |     ログイン・ログアウト     |         devise          |
+|  2  |   ユーザー登録・編集、削除   |         devise          |
+|  3  |      ゲストログイン機能      |         devise          |
+|  4  |  アカウント登録、編集、削除  |            x            |
+|  5  | ピラティススタジオ投稿(CRUD) |            x            |
+| ６  |         コメント機能         |            x            |
+|  7  |         画像投稿機能         | carrierwave/mini-magick |
+| ８  |          管理者画面          |       ActiveAdmin       |
+|  9  |           検索機能           |         Ransack         |
+| 10  |      いいね機能(非同期)      |            x            |
+| 11  |       ページネーション       |        kaminari         |
+| 12  |     レスポンシブデザイン     |        Bootstrap        |
+
+## ER 図
+
+## 使い方
+
+### ゲストログイン
+
+### 記事投稿
+
+### 検索機能
+
+### コメント機能
+
+### プロフィール画面
+
+## 工夫した点
+
+### タスク管理
+
+チーム開発を意識した開発を行う為、下記を実施
+
+1. Git, GitHub を用いたソース管理
+2. Projects のカンバン方式でタスクを管理を採用
+3. issue・ブランチをタスクごとに作成し
+
+### トップページ
+
+-
+
+### プロフィールページ
+
+- 自信が投稿した記事を表示し、管理のしやすさを意識
+
+## 追加予定機能
+
+- Google マップ連携
+- フォロー機能
+- いいねした記事を一覧表示
+- post モデルに price カラムの追加
