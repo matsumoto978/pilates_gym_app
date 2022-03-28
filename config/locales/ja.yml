@@ -1,5 +1,10 @@
 ---
 ja:
+  enums:
+    user:
+      gender:
+        man: 男性
+        woman: 女性
   attributes:
     id: ID
     namespace: 名前空間
@@ -41,11 +46,6 @@ ja:
         gender: 性別
         introduction: 自己紹介
         img: 自己画像
-    enums:
-      user:
-        gender:
-          man: "男性"
-          woman: "女性"
   views:
     pagination:
       first: "&laquo; 最初"
