@@ -9,6 +9,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   enum gender: { man: 1, woman: 2}
+  mount_uploader :img, ImageUploader
+
 
   def self.guest
     find_or_create_by!(email: "guest@example.com") do |user|
