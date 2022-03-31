@@ -51,7 +51,7 @@ width="100%" heigth="100%">
 
 ## ER 図
 
-![pilates_app_gym drawio](https://user-images.githubusercontent.com/71010438/160875346-52933ba9-512d-4fae-824d-6632fe5c98cd.png)
+![pilates_app_gym](https://user-images.githubusercontent.com/71010438/161052829-12bfd8cc-f80b-4eed-ae4c-9ab4e9a3e6e0.jpg)
 
 ## 使い方
 
