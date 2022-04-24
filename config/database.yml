@@ -82,5 +82,6 @@ test:
 production:
   <<: *default
   database: pilates_gym_app_production
-  username: pilates_gym_app
-  password: <%= ENV['PILATES_GYM_APP_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
