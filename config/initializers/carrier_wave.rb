@@ -7,5 +7,6 @@ if Rails.env.production?
       region: "ap-northeast-1",
     }
     config.fog_directory = "pilates-gym-app"
+    config.asset_host = "https://static.pilatrs-gym-app.com/"
   end
 end
