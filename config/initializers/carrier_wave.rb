@@ -6,7 +6,7 @@ if Rails.env.production?
       aws_secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key),
       region: "ap-northeast-1",
     }
-    config.fog_directory = "pilates-gym-app"
+    config.fog_directory = "pilates_gym_app_user"
     config.asset_host = "https://static.pilatrs-gym-app.com"
   end
 end
